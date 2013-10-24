@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fundation</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  
+</nav>
+
+<nav>
+    <% if logged_in? %>
+      <ul>
+        <li><%= link_to 'Logout', session_path, :method => :delete %></li>
+      </ul>
+    <% end %>
+  </nav>
+
+  <%= yield %>
+
+</body>
+</html>

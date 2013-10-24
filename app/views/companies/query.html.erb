@@ -1,0 +1,21 @@
+<%= form_tag results_companies_path, :method => :get do %>
+
+  <%= label_tag "location" %>
+  <%= select_tag :location, options_for_select(@location_options, "none") %>
+
+  <%= label_tag "industry" %>
+  <%= select_tag :industry, options_for_select(@industry_options, "none") %>
+
+  <%= label_tag "month" %>
+  <%= select_tag :month, options_for_select(@months, "none") %>
+
+  <%= label_tag "year" %>
+  <%= select_tag :year, options_for_select(@years, "none") %>
+
+  <%= label_tag "funding" %>
+  <%= select_tag :funding, options_for_select(@funding_options, "none") %>
+
+
+  <%= submit_tag "search companies" %>
+
+<% end %>

@@ -1,0 +1,28 @@
+<img src="<%= @company.logo %>"/>
+<table class="company">
+<tr>
+  <td>Company : </td>
+  <td><%= @company.name %></td>
+  <td>Description : </td>
+  <td><%= @company.description %></td>
+</tr>
+<tr>
+  <td>Industry : </td>
+  <td><%= @company.industry %></td>
+  <td>Location : </td>
+  <td><%= @company.location %></td>
+</tr>
+<tr>
+  <td>Date Founded : </td>
+  <td><% unless @company.date_founded == 0 %>
+      <%= @company.date_founded %><% end %></td>
+  <td>Total Funding : </td>
+    <td>$<%= number_with_delimiter(@company.funding, :delimiter => ",") %></td>
+</tr>
+<tr>
+  <td>Last Round : </td>
+  <td><%= "#{@company.last_round.to_s[5..6]}/#{@company.last_round.to_s[2..3]}" %></td>
+  <td>Website : </td>
+  <td><%= @company.website %></td>
+</tr>
+</table>

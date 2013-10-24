@@ -1,0 +1,24 @@
+<h1><%= @watchlist.name %></h1>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Description</th>
+    <th>Industry</th>
+    <th>Location</th>
+    <th>Date Founded</th>
+    <th>Total Funding</th>
+    <th>Last Raise</th>
+  </tr>
+<% @watchlist.companies.each do |company| %>
+  <tr>
+    <td><%= link_to company.name, company_path(company) %></td>
+    <td><%= company.description %></td>
+    <td><%= company.industry %></td>
+    <td><%= company.location %></td>
+    <td><%= company.date_founded %></td>
+    <td>$<%= number_with_delimiter(company.funding, :delimiter => ",") %></td>
+    <td><%= "#{company.last_round.to_s[5..6]}/#{company.last_round.to_s[2..3]}" %></td>
+  </tr>
+<% end %>
+</table>
