@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     #find specific user watchlist based on submission params[:watchlist]
 
 
-    redirect_to user_path
+    redirect_to user_watchlist_path(current_user, watchlist)
   end
 
   private

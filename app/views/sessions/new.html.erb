@@ -1,9 +1,14 @@
+<div class="wrapper">
+<center>
+<div class="login-form">
+<h1>Login : </h1>
 <%= form_tag session_path, :method => :post do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
+  <%= text_field_tag :email, "  email address" %>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+  <%= password_field_tag :password, "  password" %>
 
-  <%= submit_tag "Login" %>
+  <%= submit_tag "login", :class => "submit" %>
 <% end %>
+</div>
+</center>
+</div>

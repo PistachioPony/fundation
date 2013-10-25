@@ -1,6 +1,9 @@
+<center>
+<div class="watchlist-form">
 <%= form_for [@current_user, @watchlist] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, :placeholder => "  name" %>
 
-  <%= f.submit %>
+  <%= f.submit "create watchlist", :class => "submit" %>
 <% end %>
+</div>
+</center>

@@ -8,8 +8,234 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require 'normalize'
  *= require_self
- *= require_tree .
  */
 
- body { padding-top: 70px; }
+ body {
+  background-color: #F5F5F5;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+
+ }
+
+ .wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(http://www.mariannedadd.co.uk/images/stories/startup%20business.jpg) no-repeat center center fixed;
+  background-size: cover;
+ }
+
+ nav {
+  background-color: rgba(49, 219, 117, 0.9);
+  height: 2.5em;
+  position: fixed;
+  top: 0.4em;
+  width: 100%;
+  z-index: 999;
+ }
+
+ a {
+  text-decoration: none;
+ }
+
+ nav ul li, nav ul {
+  display: inline;
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+  font-size: 20px;
+ }
+
+ nav ul li {
+  color: white;
+  position: relative;
+  top: 0.4em;
+ }
+
+ nav ul li a {
+  color: white;
+ }
+
+ nav ul li a:hover {
+  border-bottom: dotted white 2px;
+}
+
+.welcome {
+  background-color: rgba(49, 219, 117, 0.9);
+  width: 40%;
+  margin-top: 10em;
+  padding: 3em 1em;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px #888888;
+}
+
+.welcome ul, .user ul {
+  padding: 0;
+  list-style: none;
+}
+
+input {
+  display: block;
+  margin: 0.6em 0;
+  border: none;
+  height: 1.4em;
+  color: gray;
+}
+
+.user-form h1, .login-form h1{
+  margin-bottom: 0.5em;
+}
+
+.user-form {
+  background-color: rgba(49, 219, 117, 0.9);
+  width: 25%;
+  margin-top: 10em;
+  color: white;
+  padding: 2.7em 0.7em;
+}
+
+.login-form {
+  margin-top: 10em;
+  background-color: rgba(49, 219, 117, 0.9);
+  width: 25%;
+  padding: 2.7em 0.7em;
+  color: white;
+}
+
+.submit {
+  border: none;
+  border: solid white 1px;
+  color: white;
+  background: none;
+  height: 1.8em;
+  margin-top: 1em;
+}
+
+.user {
+  margin-top: 10em;
+  background-color: rgba(49, 219, 117, 0.9);
+  width: 45%;
+  padding: 2.7em 0.7em;
+}
+
+.user h1, .user h3 {
+  color: white;
+  margin: 0;
+}
+
+.user h1, .user ul li a{
+  color: black
+}
+
+.watchlist-form, .query, .search {
+  margin-top: 10em;
+  background-color: rgba(49, 219, 117, 0.9);
+  width: 25%;
+  padding: 2em 0.7em 2.4em 0.7em;
+}
+
+
+.query {
+  color: white;
+  margin-top: 6em;
+}
+
+.query p {
+  font-style: oblique;
+}
+
+.field {
+  display: block
+}
+
+.query h3 {
+  border-bottom: solid white 1px;
+  width: 40%;
+}
+
+.query .submit {
+  margin-top: 2em;
+}
+
+.results {
+  width: 98%;
+  margin-bottom: 3em;
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(49, 219, 117, 0.1);
+}
+
+th {
+  background-color: #F5F5F5;
+}
+
+.date-founded, .last-raise {
+  text-align: center;
+}
+
+.header-row {
+  line-height: 3em;
+}
+
+.company {
+  margin-top: 5em;
+}
+
+.company td{
+  padding: 0.5em;
+}
+
+.company td:nth-child(odd) {
+  font-weight: 700;
+}
+
+.show-company img {
+  margin-top: 5em;
+}
+
+.user li a:hover{
+  background-color: white;
+  color: rgba(49, 219, 117, 1);
+}
+
+.show-watchlist {
+  margin-top: 4em;
+}
+
+.query-results {
+  margin-top: 4em;
+}
+
+.append-form input{
+  display: inline;
+  margin: 1em;
+}
+
+.append-form {
+  background-color: rgba(49, 219, 117, 0.9);
+  width: 100%;
+  padding: 0.2em 0.7em;
+  position: fixed;
+  bottom: 0;
+}
+
+.append-form .submit{
+  width: 10%;
+}
+
+.append-form p {
+  margin: 0;
+  margin-right: 1em;
+  color: white;
+  display: inline;
+}
+/*nav ul li:hover {
+  background-color: white;
+}*/
+

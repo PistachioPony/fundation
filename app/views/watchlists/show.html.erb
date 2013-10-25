@@ -1,7 +1,8 @@
-<h1><%= @watchlist.name %></h1>
-
-<table>
-  <tr>
+<div class="show-watchlist">
+<center><h1><%= @watchlist.name %></h1></center>
+<center>
+<table class="results">
+  <tr class="header-row">
     <th>Company</th>
     <th>Description</th>
     <th>Industry</th>
@@ -16,9 +17,15 @@
     <td><%= company.description %></td>
     <td><%= company.industry %></td>
     <td><%= company.location %></td>
-    <td><%= company.date_founded %></td>
-    <td>$<%= number_with_delimiter(company.funding, :delimiter => ",") %></td>
-    <td><%= "#{company.last_round.to_s[5..6]}/#{company.last_round.to_s[2..3]}" %></td>
+    <td class="date-founded"><% unless company.date_founded == 0 %>
+        <%= company.date_founded %><% end %></td>
+    <td><% unless company.funding == 0 %>
+        $<%= number_with_delimiter(company.funding, :delimiter => ",") %><% end %></td>
+    <td class="last-raise"><% unless company.last_round.nil? %>
+        <%= "#{company.last_round.to_s[5..6]}/#{company.last_round.to_s[2..3]}" %>
+        <% end %></td>
   </tr>
 <% end %>
 </table>
+</center>
+</div>

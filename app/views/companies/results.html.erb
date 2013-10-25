@@ -1,29 +1,43 @@
-<h3>Companies matching your criteria:</h3>
-<table>
-  <tr>
+<div class="query-results">
+<center><h2>Companies matching your criteria :</h2></center>
+<center>
+<table class="results">
+  <tr class="header-row">
     <th>Company</th>
     <th>Description</th>
     <th>Industry</th>
     <th>Location</th>
-    <th>Date Founded</th>
-    <th>Total Funding</th>
+    <th>Founded</th>
+    <th>Funding</th>
     <th>Last Raise</th>
     <th>Watch</th>
   </tr>
 <%= form_tag append_to_watchlist_user_path(current_user), :method => :patch do%>
-  <%= select_tag :watchlist, options_from_collection_for_select(@watchlist_options, :id, :name) %>
+    <div class="append-form">
+        <p>where would you like to save companies you are watching?</p>
+        <%= select_tag :watchlist, options_from_collection_for_select(@watchlist_options, :id, :name) %>
+        <%= submit_tag "watch", :class => "submit" %>
+    </div>
 <% @companies.each do |company| %>
   <tr>
     <td><%= link_to company.name, company_path(company) %></td>
     <td><%= company.description %></td>
     <td><%= company.industry %></td>
     <td><%= company.location %></td>
-    <td><%= company.date_founded %></td>
-    <td>$<%= number_with_delimiter(company.funding, :delimiter => ",") %></td>
-    <td><%= "#{company.last_round.to_s[5..6]}/#{company.last_round.to_s[2..3]}" %></td>
-    <td><%= check_box_tag 'companies[]', company.id %></td>
+    <td class="date-founded"><% unless company.date_founded == 0 %>
+        <%= company.date_founded %><% end %></td>
+    <td><% unless company.funding == 0 %>
+        $<%= number_with_delimiter(company.funding, :delimiter => ",") %><% end %></td>
+    <td class="last-raise"><% unless company.last_round.nil? %>
+        <%= "#{company.last_round.to_s[5..6]}/#{company.last_round.to_s[2..3]}" %>
+        <% end %></td>
+    <td><center><%= check_box_tag 'companies[]', company.id %></center></td>
   </tr>
 <% end %>
-<%= submit_tag "watch" %>
+
+
 <% end %>
 </table>
+</center>
+</div>
+

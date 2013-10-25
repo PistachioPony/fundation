@@ -1,21 +1,40 @@
+<center>
+<div class="query">
 <%= form_tag results_companies_path, :method => :get do %>
+  <p>Filter companies by as many or as few parameters as you would like below</p>
 
+  <h3>basic info :</h3>
+
+  <div class="field">
   <%= label_tag "location" %>
   <%= select_tag :location, options_for_select(@location_options, "none") %>
-
+  </div>
+  <br/>
+  <div class="field">
   <%= label_tag "industry" %>
   <%= select_tag :industry, options_for_select(@industry_options, "none") %>
+  </div>
 
+  <h3>last raise :</h3>
+
+  <div class="field">
   <%= label_tag "month" %>
   <%= select_tag :month, options_for_select(@months, "none") %>
 
   <%= label_tag "year" %>
   <%= select_tag :year, options_for_select(@years, "none") %>
+  </div>
 
+  <h3>total funding :</h3>
+
+  <div class="field">
   <%= label_tag "funding" %>
   <%= select_tag :funding, options_for_select(@funding_options, "none") %>
+  </div>
 
 
-  <%= submit_tag "search companies" %>
+  <%= submit_tag "search companies", :class => "submit" %>
 
 <% end %>
+</div>
+</center>

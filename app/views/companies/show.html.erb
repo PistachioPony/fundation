@@ -1,4 +1,8 @@
-<img src="<%= @company.logo %>"/>
+<center>
+<div class="show-company">
+  <% unless @company.logo.nil? %>
+    <img src="<%= @company.logo %>" height="200"/>
+  <% end %>
 <table class="company">
 <tr>
   <td>Company : </td>
@@ -23,6 +27,8 @@
   <td>Last Round : </td>
   <td><%= "#{@company.last_round.to_s[5..6]}/#{@company.last_round.to_s[2..3]}" %></td>
   <td>Website : </td>
-  <td><%= @company.website %></td>
+  <td><a href="<%= @company.website %>"><%= @company.website %></a></td>
 </tr>
 </table>
+</center>
+</div>

@@ -1,10 +1,16 @@
+<center>
+<div class="user">
+<h3>welcome back</h3>
 <h1><%= @user.email %></h1>
 
 <%= link_to "Edit Account", edit_user_path(@user) %>
-
-<h3>Watchlists:</h3>
+<br/><br/>
+<h3>Your Watchlists:</h3>
 <ul>
   <% @user.watchlists.each do |watchlist| %>
       <li><%= link_to watchlist.name, user_watchlist_path(@user, watchlist) %></li>
   <% end %>
 </ul>
+</div>
+
+</center>
